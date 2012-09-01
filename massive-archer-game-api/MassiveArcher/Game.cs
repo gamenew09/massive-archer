@@ -8,24 +8,23 @@ using System.Windows.Forms;
 
 namespace MassiveArcher
 {
-    abstract class Game : Form
+    public abstract class Game : Form
     {
 
-        public Graphics graphics;
+        protected Graphics getGraphics()
+        {
+            return this.CreateGraphics();
+        }
 
         public Game()
         {
-            graphics = MassiveArcher.createGraphicsObject(this);
+            this.Size = new Size(640,390);
         }
 
-        public void drawAndUpdate()
-        {
-            Update();
-            Draw();
-        }
+        public abstract void drawAndUpdate();
 
-        public abstract void Update();
+        public abstract void GameUpdate();
 
-        public abstract void Draw();
+        public abstract void GameDraw(Graphics graphics);
     }
 }

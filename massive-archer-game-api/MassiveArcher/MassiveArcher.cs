@@ -15,11 +15,6 @@ namespace MassiveArcher
             return new MassiveArcher();
         }
 
-        public Graphics createGraphicsObject(Game g)
-        {
-            return g.CreateGraphics();
-        }
-
         public void drawLine(Graphics g, Pen p, Point p1, Point p2)
         {
             g.DrawLine(p, p1, p2);
